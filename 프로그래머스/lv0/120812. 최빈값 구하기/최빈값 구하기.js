@@ -5,11 +5,11 @@ function solution(array) {
    for (let i = 0; i < array.length; i++) {
       answerArr[i] = [array[i], array.filter(item => item === array[i]).length];
    }
-   for (let i = 0; i < array.length; i++) {
-      if (resultArr[1] < answerArr[i][1] && resultArr[0] !== answerArr[i][0]) {
-         resultArr = answerArr[i];
+   for (let i of answerArr) {
+      if (resultArr[1] < i[1] && resultArr[0] !== i[0]) {
+         resultArr = i;
          overlap = false;
-      } else if (resultArr[1] === answerArr[i][1] && resultArr[0] !== answerArr[i][0]) {
+      } else if (resultArr[1] === i[1] && resultArr[0] !== i[0]) {
          overlap = true;
       }
    }
