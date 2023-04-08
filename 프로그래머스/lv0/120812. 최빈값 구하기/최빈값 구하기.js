@@ -1,17 +1,17 @@
 function solution(array) {
-   let answerArr = [0, 0],
-      answerObj = {},
+   let resultArr = [0, 0],
+      answerArr = [],
       overlap = false;
    for (let i = 0; i < array.length; i++) {
-      answerObj[i] = [array[i], array.filter(item => item === array[i]).length];
+      answerArr[i] = [array[i], array.filter(item => item === array[i]).length];
    }
    for (let i = 0; i < array.length; i++) {
-      if (answerArr[1] < answerObj[i][1] && answerArr[0] !== answerObj[i][0]) {
-         answerArr = answerObj[i];
+      if (resultArr[1] < answerArr[i][1] && resultArr[0] !== answerArr[i][0]) {
+         resultArr = answerArr[i];
          overlap = false;
-      } else if (answerArr[1] === answerObj[i][1] && answerArr[0] !== answerObj[i][0]) {
+      } else if (resultArr[1] === answerArr[i][1] && resultArr[0] !== answerArr[i][0]) {
          overlap = true;
       }
    }
-   return overlap === true ? -1 : answerArr[0];
+   return overlap === true ? -1 : resultArr[0];
 }
