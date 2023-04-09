@@ -4,4 +4,5 @@ function solution(n, t) {
       answer *= 2;
    }
    return answer;
+   //return n << t;
 }
